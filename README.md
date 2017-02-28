@@ -40,3 +40,8 @@ ICMP 报文的序号。
 `inet_addr()` 转换点分十进制-->32位整形
 `inet_ntoa()` 转换32位整形-->点分十进制
 `gethostbyname()` 通过域名得到IP
+`unsigned short htons(unsigned short)`
+`unsigned short ntohs(unsigned short)`
+`unsigned long  htonl(unsigned long)`
+`unsigned long  ntohl(unsigned long)`
+- 上面的函数非常简单，通过函数名就能知道它们的功能，htonl/htons 中的h代表主机（host）字节序，n代表网络（network）字节序，s指的是 short，l指的是 long（需要注意一下，linux 中 long 类型只占4个字节，跟int类型一样）。
