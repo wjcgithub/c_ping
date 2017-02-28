@@ -36,12 +36,12 @@ ICMP 报文的序号。
 也就是报文，本项目中我们将发送报文的时间戳放入数据字段，这样当接收到该报文应答的时候可以取出发送时间戳，将接收应答的时间戳减去发送时间戳就是报文往返时间（rtt）。提前预告一下，这里使用gettimeofday()API函数获取时间戳，详细介绍会在函数介绍部分说明。
 
 ## 函数介绍
-`gettimeofday()` 精确存入当前时间
-`inet_addr()` 转换点分十进制-->32位整形
-`inet_ntoa()` 转换32位整形-->点分十进制
-`gethostbyname()` 通过域名得到IP
-`unsigned short htons(unsigned short)`
-`unsigned short ntohs(unsigned short)`
-`unsigned long  htonl(unsigned long)`
-`unsigned long  ntohl(unsigned long)`
+1. `gettimeofday()` 精确存入当前时间
+2. `inet_addr()` 转换点分十进制-->32位整形
+3. `inet_ntoa()` 转换32位整形-->点分十进制
+4. `gethostbyname()` 通过域名得到IP
+5. `unsigned short htons(unsigned short)`
+6. `unsigned short ntohs(unsigned short)`
+7. `unsigned long  htonl(unsigned long)`
+8. `unsigned long  ntohl(unsigned long)`
 - 上面的函数非常简单，通过函数名就能知道它们的功能，htonl/htons 中的h代表主机（host）字节序，n代表网络（network）字节序，s指的是 short，l指的是 long（需要注意一下，linux 中 long 类型只占4个字节，跟int类型一样）。
